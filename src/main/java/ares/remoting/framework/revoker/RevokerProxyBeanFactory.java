@@ -64,7 +64,7 @@ public class RevokerProxyBeanFactory implements InvocationHandler {
         request.setUniqueKey(UUID.randomUUID().toString()+"-"+Thread.currentThread().getId());
         request.setProviderService(newProvider);
         request.setInvokeTimeout(consumeTiemout);
-        request.setInvokeMethodName(method.getName());
+        request.setInvokedMethodName(method.getName());
         request.setArgs(args);
         try {
             //构建用来发起调用的线程池

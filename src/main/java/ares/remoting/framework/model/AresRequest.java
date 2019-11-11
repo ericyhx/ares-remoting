@@ -22,7 +22,7 @@ public class AresRequest implements Serializable {
     /**
      * 调用的方法名称
      */
-    private String invokeMethodName;
+    private String invokedMethodName;
     /**
      * 传递的参数
      */

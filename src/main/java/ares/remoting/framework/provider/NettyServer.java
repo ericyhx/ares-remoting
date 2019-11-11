@@ -71,4 +71,15 @@ public class NettyServer {
     public static NettyServer singleton(){
         return server;
     }
+    /**
+     * 停止Netty服务
+     */
+    public void stop() {
+        if (null == channel) {
+            throw new RuntimeException("Netty Server Stoped");
+        }
+        bossGroup.shutdownGracefully();
+        workGroup.shutdownGracefully();
+        channel.closeFuture().syncUninterruptibly();
+    }
 }

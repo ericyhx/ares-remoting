@@ -52,9 +52,23 @@ public class ProviderService implements Serializable {
      */
     private String groupName;
 
-    public ProviderService copy(){
-        ProviderService service=new ProviderService();
-        BeanUtils.copyProperties(this,service);
-        return service;
+//    public ProviderService copy(){
+//        ProviderService service=new ProviderService();
+//        BeanUtils.copyProperties(this,service);
+//        return service;
+//    }
+    public ProviderService copy() {
+        ProviderService providerService = new ProviderService();
+        providerService.setServiceItf(serviceItf);
+        providerService.setServiceObject(serviceObject);
+        providerService.setServiceMethod(serviceMethod);
+        providerService.setServerIp(serverIp);
+        providerService.setServerPort(serverPort);
+        providerService.setTimeout(timeout);
+        providerService.setWeight(weight);
+        providerService.setWorkerThreads(workerThreads);
+        providerService.setAppKey(appKey);
+        providerService.setGroupName(groupName);
+        return providerService;
     }
 }

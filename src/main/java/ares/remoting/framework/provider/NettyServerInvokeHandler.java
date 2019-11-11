@@ -36,7 +36,7 @@ public class NettyServerInvokeHandler extends SimpleChannelInboundHandler<AresRe
         if(ctx.channel().isWritable()){
             ProviderService metaDataModel = request.getProviderService();
             long consumeTimeout = request.getInvokeTimeout();
-            final String methodName = request.getInvokeMethodName();
+            final String methodName = request.getInvokedMethodName();
             //获取限流工具类
             String serviceKey = metaDataModel.getServiceItf().getName();
             int workerThreads = metaDataModel.getWorkerThreads();
