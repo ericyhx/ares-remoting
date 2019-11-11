@@ -1,6 +1,7 @@
 package ares.remoting.framework.model;
 
 import lombok.Data;
+import org.springframework.beans.BeanUtils;
 
 import java.io.Serializable;
 import java.lang.reflect.Method;
@@ -25,11 +26,11 @@ public class ProviderService implements Serializable {
     /**
      * 服务所在的ip
      */
-    private String serviceIp;
+    private String serverIp;
     /**
      * 服务所在的端口号
      */
-    private int port;
+    private int serverPort;
     /**
      * 服务调用的超时时间
      */
@@ -53,6 +54,7 @@ public class ProviderService implements Serializable {
 
     public ProviderService copy(){
         ProviderService service=new ProviderService();
-
+        BeanUtils.copyProperties(this,service);
+        return service;
     }
 }

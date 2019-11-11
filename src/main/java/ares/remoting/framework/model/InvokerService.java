@@ -1,5 +1,7 @@
 package ares.remoting.framework.model;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.lang.reflect.Method;
 
@@ -8,6 +10,7 @@ import java.lang.reflect.Method;
  * @author: yuhongxi
  * @date:2019/11/6
  */
+@Data
 public class InvokerService implements Serializable {
     private Class<?> serviceItf;
     private Object serviceObject;
