@@ -7,7 +7,12 @@ import org.apache.thrift.TException;
 import org.apache.thrift.TSerializer;
 import org.apache.thrift.protocol.TBinaryProtocol;
 
-
+/**
+ * 对于性能和简洁性有极高要求的场景，Hessian、protobuf、Thrift、Avro有竞争关系
+ * Hessian是在性能和稳定性同时考虑下最有的序列化协议
+ *
+ * 对于需要提供一个完整的RPC解决方案，Thrift是一个好的选择
+ */
 
 public class ThriftSerializer implements ISerializer {
 

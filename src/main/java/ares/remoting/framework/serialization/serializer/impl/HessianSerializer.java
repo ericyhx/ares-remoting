@@ -8,8 +8,8 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
 /**
- * @author liyebing created on 17/1/21.
- * @version $Id$
+ * 对于性能和简洁性有极高要求的场景，Hessian、protobuf、Thrift、Avro有竞争关系
+ * Hessian是在性能和稳定性同时考虑下最有的序列化协议
  */
 public class HessianSerializer implements ISerializer {
 

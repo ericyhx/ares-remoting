@@ -75,7 +75,7 @@ public class RevokerServiceCallable implements Callable<AresResponse> {
              *
              * ==========以下内容为异步执行（不在调用线程中的客户端与服务端交互）==========
              * 当服务端接收到消息后，会进行解码、反射调用服务、封装调用结果写入通道、编码等步骤，消息会发送到客户端。
-             * 此时客户端接收到调用结果后，将会从`React从线程组`中选出一根`NIO线程`:
+             * 此时客户端接收到调用结果后，将会从`React线程组`中选出一根`NIO线程`:
              *  串行化调用`NettyClientInvokeHandler`进行解码、将服务调用结果写入`UUID/TraceId映射`的`RPC响应结果阻塞队列`中，并带上时间戳!!!
              *
              * ========客户端调用线程Task========

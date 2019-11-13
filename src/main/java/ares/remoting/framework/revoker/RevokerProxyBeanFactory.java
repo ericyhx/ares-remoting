@@ -30,7 +30,7 @@ public class RevokerProxyBeanFactory implements InvocationHandler {
     private static int threadWorkerNumber=10;
     private String clusterStrategy;
 
-    public RevokerProxyBeanFactory(Class<?> targetInterface, int consumeTiemout, String clusterStrategy) {
+    private RevokerProxyBeanFactory(Class<?> targetInterface, int consumeTiemout, String clusterStrategy) {
         this.targetInterface = targetInterface;
         this.consumeTiemout = consumeTiemout;
         this.clusterStrategy = clusterStrategy;
